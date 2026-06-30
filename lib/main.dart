@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:service/service.dart';
-import 'package:logger/logger.dart';
-import 'package:storage/storage.dart';
 import 'package:module_home/module_home.dart';
 import 'package:module_mine/module_mine.dart';
+import 'services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // 注册服务实现
-  ServiceRegistry.register<ILog>(AppLog());
-  ServiceRegistry.register<IStorage>(AppStorage());
+  // 注册所有服务（在 services.dart 中配置）
+  registerAllServices();
 
   // 初始化存储
   await ServiceRegistry.get<IStorage>().init();

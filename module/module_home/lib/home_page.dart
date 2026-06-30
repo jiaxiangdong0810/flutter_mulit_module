@@ -27,6 +27,9 @@ class _HomePageState extends BasePageState<HomePage> {
     });
     ServiceRegistry.get<IStorage>().putInt('counter', _counter);
     ServiceRegistry.get<ILog>().i('counter saved: $_counter', tag: 'Home');
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('日志已打印: counter saved: $_counter'), duration: const Duration(seconds: 1)),
+    );
   }
 
   @override
