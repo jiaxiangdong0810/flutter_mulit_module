@@ -1,5 +1,10 @@
 allprojects {
     repositories {
+        // 国内镜像源
+        maven { url = uri("https://maven.aliyun.com/repository/google") }
+        maven { url = uri("https://maven.aliyun.com/repository/central") }
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        // 官方源（备用）
         google()
         mavenCentral()
     }
