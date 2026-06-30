@@ -1,0 +1,9 @@
+name: utils
+description: "Simple utility functions package."
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:

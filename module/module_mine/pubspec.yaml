@@ -1,0 +1,24 @@
+name: module_mine
+description: "Mine module - business layer."
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  base_ui:
+    path: ../../common/base_ui
+  service:
+    path: ../../base/service
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  logger:
+    path: ../../base/logger
+
+flutter:
