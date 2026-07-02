@@ -1,0 +1,5 @@
+#include "Generated.xcconfig"
+
+// Prod (正式版) 配置
+PRODUCT_BUNDLE_IDENTIFIER = com.example.flutter_mulit_module
+PRODUCT_NAME = Flutter多模块

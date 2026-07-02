@@ -1,0 +1,5 @@
+#include "Generated.xcconfig"
+
+// Beta (体验版) 配置
+PRODUCT_BUNDLE_IDENTIFIER = com.example.flutter_mulit_module.beta
+PRODUCT_NAME = Flutter多模块Beta

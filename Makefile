@@ -1,4 +1,4 @@
-.PHONY: dev build-logger build-storage build-all logger-sdk storage-sdk all-sdk
+.PHONY: dev build-logger build-storage build-all logger-sdk storage-sdk all-sdk run-prod run-beta build-apk-prod build-apk-beta build-ios-prod build-ios-beta
 
 # 构建 SDK
 build-logger:
@@ -29,3 +29,29 @@ storage-sdk: build-storage
 all-sdk: build-all
 	dart tool/switch_deps.dart all-sdk
 	flutter pub get
+
+# ========== 多 App 构建命令 ==========
+
+# 运行正式版
+run-prod:
+	flutter run --flavor prod --dart-define=FLAVOR=prod
+
+# 运行体验版
+run-beta:
+	flutter run --flavor beta --dart-define=FLAVOR=beta
+
+# 构建正式版 APK
+build-apk-prod:
+	flutter build apk --flavor prod --dart-define=FLAVOR=prod
+
+# 构建体验版 APK
+build-apk-beta:
+	flutter build apk --flavor beta --dart-define=FLAVOR=beta
+
+# 构建正式版 iOS
+build-ios-prod:
+	flutter build ios --flavor prod --dart-define=FLAVOR=prod
+
+# 构建体验版 iOS
+build-ios-beta:
+	flutter build ios --flavor beta --dart-define=FLAVOR=beta

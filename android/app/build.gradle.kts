@@ -15,14 +15,28 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.flutter_mulit_module"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+    }
+
+    // ========== 多 App 配置：通过 productFlavors 产出不同应用 ==========
+    flavorDimensions += "app"
+
+    productFlavors {
+        // 正式版 App
+        create("prod") {
+            dimension = "app"
+            applicationId = "com.example.flutter_mulit_module"
+            // 可以在这里设置不同的 versionCode/versionName
+        }
+
+        // 体验版 App（包名不同，可同时安装）
+        create("beta") {
+            dimension = "app"
+            applicationId = "com.example.flutter_mulit_module.beta"
+        }
     }
 
     buildTypes {

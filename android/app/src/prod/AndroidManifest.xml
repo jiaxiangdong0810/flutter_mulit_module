@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- prod flavor: 正式版应用名称已通过 build.gradle.kts 的 resValue 设置 -->
+    <!-- 如果需要额外覆盖，可在此处添加 application 属性 -->
+</manifest>

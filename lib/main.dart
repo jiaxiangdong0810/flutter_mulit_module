@@ -4,6 +4,7 @@ import 'package:logger/register.dart';
 import 'package:storage/register.dart';
 import 'package:module_home/module_home.dart';
 import 'package:module_mine/module_mine.dart';
+import 'config/flavor.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter 多模块验证',
+      title: Flavor.current.appName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
