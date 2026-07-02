@@ -1,5 +1,5 @@
 name: logger
-description: "Simple logging utility package."
+description: "Simple logging utility package. Provides ILog interface and AppLog implementation."
 version: 1.0.0
 publish_to: 'none'
 
@@ -7,7 +7,3 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
-  service:
-    path: ../service
-  annotation:
-    path: ../annotation

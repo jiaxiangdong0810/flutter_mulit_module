@@ -1,10 +1,11 @@
-import 'package:service/service.dart';
-import 'package:annotation/annotation.dart';
-import 'storage.dart';
+export 'storage_sdk.dart';
 
-/// 存储服务注册入口
-/// @serviceRegister 注解标记，等 build_runner 配置好后可自动生成
-@serviceRegister
-void registerStorageService() {
-  ServiceRegistry.register<IStorage>(AppStorage());
+import 'istorage.dart';
+import 'storage_sdk.dart';
+
+/// 初始化存储服务并返回实例
+/// 内部项目可将返回值注册到 ServiceRegistry
+Future<IStorage> initStorageService() async {
+  await Storage.init();
+  return Storage.instance;
 }

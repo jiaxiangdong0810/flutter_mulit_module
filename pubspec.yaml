@@ -35,8 +35,6 @@ dependencies:
   # 基础层
   service:
     path: base/service
-  annotation:
-    path: base/annotation
   logger:
     path: base/logger
   storage:

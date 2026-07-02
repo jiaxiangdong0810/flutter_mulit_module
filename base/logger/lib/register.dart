@@ -1,10 +1,11 @@
-import 'package:service/service.dart';
-import 'package:annotation/annotation.dart';
-import 'logger.dart';
+export 'logger_sdk.dart';
 
-/// 日志服务注册入口
-/// @serviceRegister 注解标记，等 build_runner 配置好后可自动生成
-@serviceRegister
-void registerLogService() {
-  ServiceRegistry.register<ILog>(AppLog());
+import 'ilog.dart';
+import 'logger_sdk.dart';
+
+/// 初始化日志服务并返回实例
+/// 内部项目可将返回值注册到 ServiceRegistry
+ILog initLogService() {
+  Logger.init();
+  return Logger.instance;
 }

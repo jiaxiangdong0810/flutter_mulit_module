@@ -1,5 +1,5 @@
 import 'dart:developer' as developer;
-import 'package:service/service.dart';
+import 'ilog.dart';
 
 /// 日志服务实现
 class AppLog implements ILog {

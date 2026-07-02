@@ -1,8 +1,0 @@
-builders:
-  service_register:
-    import: "package:generator/generator.dart"
-    builder_factories: ["serviceRegisterBuilder"]
-    build_extensions: {"lib/services.dart": ["lib/services.g.dart"]}
-    auto_apply: dependents
-    build_to: source
-    is_optional: false
