@@ -1,13 +1,7 @@
-import 'package:logger/register.dart';
-import 'package:storage/register.dart';
+// 服务注册入口
+// 实际注册逻辑由 build_runner 自动生成到 services.g.dart
+// 如果某个组件未在 pubspec.yaml 中引用，其注册代码不会出现，
+// ServiceRegistry.get<T>() 会返回 Noop 空实现，不会报错。
 
-/// 服务配置文件
-/// 在这里集中管理所有服务的注册
-/// 想移除某个服务？注释掉对应的 import 和调用即可
-void registerAllServices() {
-  // 日志服务 - 注释下面这行即可移除日志功能
-  registerLogService();
-
-  // 存储服务 - 注释下面这行即可移除存储功能
-  registerStorageService();
-}
+// ignore: unused_import
+export 'services.g.dart' show registerAllServices;

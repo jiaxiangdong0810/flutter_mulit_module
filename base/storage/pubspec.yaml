@@ -12,6 +12,8 @@ dependencies:
   shared_preferences: ^2.2.0
   service:
     path: ../service
+  annotation:
+    path: ../annotation
 
 dev_dependencies:
   flutter_test:
