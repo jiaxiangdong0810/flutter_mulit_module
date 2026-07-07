@@ -1,4 +1,4 @@
-name: logger
+name: app_logger
 description: "Simple logging utility package. Provides ILog interface and AppLog implementation."
 version: 1.0.0
 publish_to: 'none'
@@ -7,3 +7,4 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
+  logger: ^2.5.0

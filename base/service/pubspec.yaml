@@ -7,7 +7,7 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
-  logger:
-    path: ../logger
+  app_logger:
+    path: ../app_logger
   storage:
     path: ../storage

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:service/service.dart';
-import 'package:logger/logger.dart';
+import 'package:app_logger/logger.dart';
 import 'package:storage/storage.dart';
 import 'package:module_home/module_home.dart';
 

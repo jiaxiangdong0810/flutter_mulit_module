@@ -1,5 +1,5 @@
 import 'package:service/service.dart';
-import 'package:logger/logger.dart';
+import 'package:app_logger/logger.dart';
 
 /// logger 组件独立运行
 void main() {

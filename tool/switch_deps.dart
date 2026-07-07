@@ -5,12 +5,12 @@ import 'dart:io';
 ///
 /// 用法:
 ///   dart tool/switch_deps.dart dev              # 全部使用源码
-///   dart tool/switch_deps.dart logger-sdk       # logger 使用 SDK
+///   dart tool/switch_deps.dart logger-sdk       # app_logger 使用 SDK
 ///   dart tool/switch_deps.dart storage-sdk      # storage 使用 SDK
 ///   dart tool/switch_deps.dart all-sdk          # 全部使用 SDK
 void main(List<String> args) {
   if (args.isEmpty) {
-    print('Usage: dart tool/switch_deps.dart [dev|logger-sdk|storage-sdk|all-sdk]');
+    print('Usage: dart tool/switch_deps.dart [dev|app_logger-sdk|storage-sdk|all-sdk]');
     exit(1);
   }
 
@@ -32,15 +32,15 @@ void main(List<String> args) {
       print('✅ 源码模式');
       break;
     case 'logger-sdk':
-      content = _addOverrides(content, ['logger']);
-      print('✅ logger 使用 SDK');
+      content = _addOverrides(content, ['app_logger']);
+      print('✅ app_logger 使用 SDK');
       break;
     case 'storage-sdk':
       content = _addOverrides(content, ['storage']);
       print('✅ storage 使用 SDK');
       break;
     case 'all-sdk':
-      content = _addOverrides(content, ['logger', 'storage']);
+      content = _addOverrides(content, ['app_logger', 'storage']);
       print('✅ 全部使用 SDK');
       break;
     default:

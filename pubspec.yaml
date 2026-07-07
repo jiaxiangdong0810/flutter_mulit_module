@@ -33,10 +33,14 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   # 基础层
+  app_router:
+    path: base/app_router
+  module_registry:
+    path: base/module_registry
   service:
     path: base/service
-  logger:
-    path: base/logger
+  app_logger:
+    path: base/app_logger
   storage:
     path: base/storage
   utils:
@@ -51,6 +55,8 @@ dependencies:
     path: module/module_home
   module_mine:
     path: module/module_mine
+  module_profile:
+    path: module/module_profile
 
 dev_dependencies:
   flutter_test:

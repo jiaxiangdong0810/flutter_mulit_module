@@ -4,18 +4,18 @@ import 'dart:io';
 /// 构建 SDK
 ///
 /// 用法:
-///   dart tool/build_sdk.dart logger   # 构建 logger SDK
+///   dart tool/build_sdk.dart app_logger   # 构建 app_logger SDK
 ///   dart tool/build_sdk.dart storage  # 构建 storage SDK
 ///   dart tool/build_sdk.dart all      # 构建全部
 void main(List<String> args) {
   if (args.isEmpty) {
-    print('Usage: dart tool/build_sdk.dart [logger|storage|all]');
+    print('Usage: dart tool/build_sdk.dart [app_logger|storage|all]');
     exit(1);
   }
 
   final target = args[0];
   final components = target == 'all'
-      ? ['logger', 'storage']
+      ? ['app_logger', 'storage']
       : [target];
 
   for (final name in components) {

@@ -2,7 +2,7 @@
 ///
 /// 外部团队使用方式:
 /// ```dart
-/// import 'package:logger/logger_sdk.dart';
+/// import 'package:app_logger/logger_sdk.dart';
 ///
 /// Logger.init(); // 使用默认实现
 /// Logger.d('debug message');
