@@ -9,8 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  app_router:
+    path: ../../base/app_router
   base_ui:
     path: ../../common/base_ui
+  module_registry:
+    path: ../../base/module_registry
   service:
     path: ../../base/service
 
@@ -18,8 +22,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
-  logger:
-    path: ../../base/logger
+  app_logger:
+    path: ../../base/app_logger
   storage:
     path: ../../base/storage
 

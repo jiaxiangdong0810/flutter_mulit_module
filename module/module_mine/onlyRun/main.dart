@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:service/service.dart';
-import 'package:logger/logger.dart';
+import 'package:app_logger/logger.dart';
 import 'package:module_mine/module_mine.dart';
 
 /// module_mine 组件独立运行

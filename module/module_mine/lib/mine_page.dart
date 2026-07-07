@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app_router/app_router.dart';
 import 'package:base_ui/base_ui.dart';
 import 'package:service/service.dart';
 
@@ -21,6 +22,14 @@ class _MinePageState extends BasePageState<MinePage> {
           accountName: Text('测试用户'),
           accountEmail: Text('test@example.com'),
           currentAccountPicture: CircleAvatar(child: Icon(Icons.person)),
+        ),
+        ListTile(
+          leading: const Icon(Icons.account_circle),
+          title: const Text('个人信息设置'),
+          onTap: () {
+            ServiceRegistry.get<ILog>().i('打开个人信息设置', tag: 'Mine');
+            AppRouter.open(context, '/profile');
+          },
         ),
         ListTile(
           leading: const Icon(Icons.settings),

@@ -1,0 +1,24 @@
+name: module_profile
+description: "Profile module - business layer."
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  app_router:
+    path: ../../base/app_router
+  base_ui:
+    path: ../../common/base_ui
+  module_registry:
+    path: ../../base/module_registry
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:

@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:service/service.dart';
+import 'istorage.dart';
 
 /// 存储服务实现
 class AppStorage implements IStorage {
