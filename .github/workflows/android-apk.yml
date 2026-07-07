@@ -30,7 +30,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: stable
+          flutter-version: "3.24.0"
           cache: true
 
       - name: Get dependencies
@@ -44,3 +44,14 @@ jobs:
         with:
           name: app-${{ inputs.flavor }}-release
           path: build/app/outputs/flutter-apk/app-${{ inputs.flavor }}-release.apk
+
+      - name: Upload to Pgyer
+        env:
+          PGYER_API_KEY: ${{ secrets.PGYER_API_KEY }}
+          APK_PATH: build/app/outputs/flutter-apk/app-${{ inputs.flavor }}-release.apk
+        run: |
+          curl --fail-with-body https://www.pgyer.com/apiv2/app/upload \
+            -F "_api_key=${PGYER_API_KEY}" \
+            -F "file=@${APK_PATH}" \
+            -F "buildInstallType=1" \
+            -F "buildUpdateDescription=${{ github.sha }}"
