@@ -2,15 +2,6 @@ name: Android APK
 
 on:
   workflow_dispatch:
-    inputs:
-      flavor:
-        description: Build flavor
-        required: true
-        default: prod
-        type: choice
-        options:
-          - prod
-          - beta
 
 jobs:
   build-apk:
@@ -37,10 +28,10 @@ jobs:
         run: flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release --flavor ${{ inputs.flavor }} --dart-define=FLAVOR=${{ inputs.flavor }}
+        run: flutter build apk --release
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-${{ inputs.flavor }}-release
-          path: build/app/outputs/flutter-apk/app-${{ inputs.flavor }}-release.apk
+          name: app-release
+          path: build/app/outputs/flutter-apk/app-release.apk
