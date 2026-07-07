@@ -50,8 +50,29 @@ jobs:
           PGYER_API_KEY: ${{ secrets.PGYER_API_KEY }}
           APK_PATH: build/app/outputs/flutter-apk/app-${{ inputs.flavor }}-release.apk
         run: |
-          curl --fail-with-body https://www.pgyer.com/apiv2/app/upload \
+          if [ -z "$PGYER_API_KEY" ]; then
+            echo "PGYER_API_KEY secret is empty"
+            exit 1
+          fi
+
+          response="$(curl --silent --show-error --fail-with-body https://upload.pgyer.com/apiv2/app/upload \
             -F "_api_key=${PGYER_API_KEY}" \
             -F "file=@${APK_PATH}" \
             -F "buildInstallType=1" \
-            -F "buildUpdateDescription=${{ github.sha }}"
+            -F "buildUpdateDescription=${{ github.sha }}")"
+
+          echo "$response"
+          RESPONSE="$response" python3 - <<'PY'
+          import json
+          import os
+          import sys
+
+          data = json.loads(os.environ["RESPONSE"])
+          if data.get("code") != 0:
+              print(f"Pgyer upload failed: {data.get('message')}")
+              sys.exit(1)
+
+          shortcut = data.get("data", {}).get("buildShortcutUrl")
+          if shortcut:
+              print(f"Pgyer install URL: https://www.pgyer.com/{shortcut}")
+          PY
